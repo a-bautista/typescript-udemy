@@ -32,6 +32,7 @@ interface Lengthy {
 }
 
 // [T, string] indicates the return type
+// T is a generic of interface Lengthy
 function countAndDescribe<T extends Lengthy>(element: T): [T, string]{
   let descriptionText = 'Got no value';
   if (element.length > 0 && element.length < 2){

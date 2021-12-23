@@ -21,7 +21,7 @@ const add = (a:number, b: number) => {
 
 // arrow function upgraded: you don't have to specify the return keyword
 const add_improved = (a: number, b:number) => a + b;
-const printOutput = (output: string | number) => console.log(output);
+const printOutput = (output: string | number ) => console.log(output);
 const button = document.querySelector('button');
 
 console.log(add(2,9));
@@ -36,7 +36,8 @@ const hobbies = ['Sports', 'Sailing'];
 const activeHobbies = ['Parcours'];
 
 // insert into the activeHobbies array the hobbies
-activeHobbies.push(...hobbies);
+activeHobbies.push(hobbies[0]); // normal way of inserting objects
+// activeHobbies.push(...hobbies);
 console.log(activeHobbies);
 
 const Person = {

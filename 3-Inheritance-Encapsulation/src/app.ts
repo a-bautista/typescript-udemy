@@ -2,6 +2,7 @@ abstract class Department {
   // private readonly id: string;
   // private name: string;
   static fiscalYear = 2021;
+  // protected indicates that the access of the variable is within the class
   protected employees: string[] = [];
 
   constructor(protected readonly id: string, 

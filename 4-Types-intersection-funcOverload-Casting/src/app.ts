@@ -158,3 +158,61 @@ const errorBag: ErrorContainer = {
     email: 'Not a valid email!',
     username: 'Must start with a capital character!'
 }
+
+interface Pet {
+    name: string;
+    age: Number;
+    breed: string;
+
+    makeNoise(): void;
+}
+
+class Dog implements Pet {
+    name: string;
+    age: number;
+    breed: string;
+
+    constructor(name: string, age: number, breed: string){
+        this.name = name;
+        this.age = age;
+        this.breed = breed;
+    }
+
+    makeNoise(){
+        console.log("Woof! Woof!");
+    }
+}
+
+
+class Cat implements Pet {
+    name: string;
+    age: number;
+    breed: string;
+
+    constructor(name: string, age: number, breed: string){
+        this.name = name;
+        this.age = age;
+        this.breed = breed;
+    }
+
+    makeNoise(){
+        console.log("Meow! Meow!")
+    }
+}
+
+const cat1 = new Cat("Micho", 10, "Callejero");
+const dog1 = new Dog("Buffy", 9, "Cocker Spaniel");
+
+type TypePet = Dog | Cat;
+
+function makeNoise(typePet: TypePet){
+    if (typePet instanceof Dog ){
+        console.log("We have this dog: " + typePet.name);
+    }
+    else if (typePet instanceof Cat){
+        console.log("We have this cat: " + typePet.name);
+    }
+}
+
+makeNoise(cat1);
+makeNoise(dog1);

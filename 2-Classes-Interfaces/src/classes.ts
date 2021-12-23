@@ -10,6 +10,7 @@ abstract class Department {
     // console.log(Department.fiscalYear);
   }
 
+  // static indicates that you don't need to instantiate the object to call this method
   static createEmployee(name: string) {
     return { name: name };
   }
@@ -44,6 +45,7 @@ class AccountingDepartment extends Department {
   private lastReport: string;
   private static instance: AccountingDepartment;
 
+  // overload of methods with get/set
   get mostRecentReport() {
     if (this.lastReport) {
       return this.lastReport;
@@ -67,6 +69,7 @@ class AccountingDepartment extends Department {
     if (AccountingDepartment.instance) {
       return this.instance;
     }
+    // create the instance of this object
     this.instance = new AccountingDepartment('d2', []);
     return this.instance;
   }
