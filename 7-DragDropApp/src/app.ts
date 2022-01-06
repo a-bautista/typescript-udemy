@@ -29,9 +29,7 @@ class ProjectState {
     private listeners: Listener[] = []; // I created my own types
     private projects: Project[] = [];
     private static instance: ProjectState;
-    private constructor(){
-
-    }
+    private constructor(){}
 
     static getInstance(){
         if (this.instance){
